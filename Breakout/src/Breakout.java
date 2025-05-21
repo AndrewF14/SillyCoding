@@ -48,16 +48,12 @@ public class Breakout extends JPanel implements KeyListener, ActionListener {
     private int totalBricks = brickRows * brickColumns;
 
     // Frame Constants
-    private static final int frameWidth = 700;
-    private static final int frameHeight = 600;
-    private static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    private static int screenWidth = (int) screenSize.getWidth();
-    private static int screenHeight = (int) screenSize.getHeight();
+    private int frameHeight = Constants.frameHeight;
+    private int frameWidth = Constants.frameWidth;
 
     // Speed Variables
     private int speedMulti = 1;
     private final int defaultSpeed = 1;
-
 
     // Powerup variables
     private int multiGamesLeft = 0;
@@ -66,16 +62,7 @@ public class Breakout extends JPanel implements KeyListener, ActionListener {
 
 
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame();
-        Breakout game = new Breakout();
-        frame.setBounds((screenWidth / 2) - (frameWidth / 2), (screenHeight / 2) - (frameHeight / 2), frameWidth, frameHeight);
-        frame.setTitle("Breakout");
-        frame.setResizable(false);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(game);
-        frame.setVisible(true);
-    }
+
 
     public Breakout() {
         map = new BrickGenerator(brickRows, brickColumns);
